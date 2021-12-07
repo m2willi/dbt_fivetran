@@ -17,7 +17,4 @@ SELECT
     C_CUSTKEY,
     _FIVETRAN_DELETED,
     _FIVETRAN_SYNCED 
-from {{ ref('stage_customers') }} c,
- {{ ref('stage_orders') }} o
- where o.O_CUSTKEY = c.C_CUSTKEY
-
+from {{ ref('int_customer_order') }} c
